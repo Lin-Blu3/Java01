@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class mainarguments //defining class
+	{
+	public static void main(String[] args) //main method
+	{
+		question(); 
+	}
+	
+	public static void question() //method for the question 
+		{
+		Scanner Qone_S = new Scanner(System.in);
+		System.out.println("Whats the first element on the periodic table?(Lowercaseonly)"); //Question 1
+		String answer = Qone_S.nextLine();
+		System.out.println("You put " + answer.toLowerCase() /* to make non case sensitave */ + ". is that correct?(yes/no)");
+		String check = Qone_S.nextLine(); // gather user conformation for correct input
+		if ( check.equals("yes") ) //Strings needing to be speical with their own version of checking
+			{
+				if ( answer.toLowerCase().equals("hydrogen")) { System.out.println("Congrats. your not stupid"); }
+			}
+		else { System.out.println(check); question(); }
+		Qone_S.close(); //close scanner to remove data leak
+	}
+	}
+
+// why do strings have to be so special!!!! its stupid.
